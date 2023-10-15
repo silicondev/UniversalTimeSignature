@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UniversalTimeSignature.Lib;
 
 namespace UniversalTimeSignature
 {
@@ -23,6 +24,10 @@ namespace UniversalTimeSignature
         public MainWindow()
         {
             InitializeComponent();
+            MessageBox.Show(DateTime.Now.ToUTS());
+            //string str = "a";
+            //str = str.Swap(0, 'b');
+            //MessageBox.Show(str);
         }
     }
 }
