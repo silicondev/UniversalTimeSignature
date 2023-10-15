@@ -1,5 +1,5 @@
 # Universal Time Signature
-### by Josh Sims (silicondev)
+by Josh Sims (silicondev)
 
 ---
 This is an attempt to create a digital and scientific standard that expands upon the pre-existing Unix Timestamp. Once fully developed, UTS will be an easily readable Base-62 string, comprising of the total amount of ticks (100 nanoseconds) since the beginning of time.
