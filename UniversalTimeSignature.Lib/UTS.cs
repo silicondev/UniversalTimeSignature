@@ -15,6 +15,12 @@ namespace UniversalTimeSignature.Lib
         public static string ToUTS(this DateTime dt)
         {
             BigInteger t = dt.Ticks;
+            t += 13400000000 * (BigInteger)(365.2425 * 86400) * 1000000000;
+            return t.ToUTS();
+        }
+
+        public static string ToUTS(this BigInteger t)
+        {
             string str = "";
             var units = new List<int>();
 
@@ -26,13 +32,13 @@ namespace UniversalTimeSignature.Lib
 
             for (int p = pow; p >= 0; p--)
             {
-                units.Add(0);
-
+                int i = 0;
                 while (t > BigInteger.Pow(ch.Length, p))
                 {
-                    units[units.Count - 1]++;
+                    i++;
                     t -= BigInteger.Pow(ch.Length, p);
                 }
+                units.Add(i);
             }
 
             foreach (int unit in units)
