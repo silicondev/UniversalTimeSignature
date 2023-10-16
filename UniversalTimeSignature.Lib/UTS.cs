@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Numerics;
 using System.Text;
 
 namespace UniversalTimeSignature.Lib
@@ -8,122 +9,46 @@ namespace UniversalTimeSignature.Lib
     {
         private static string ch = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+        public static async Task<string> ToUTSAsyc(this DateTime dt) =>
+            await Task.Run(() => ToUTS(dt));
+
         public static string ToUTS(this DateTime dt)
         {
-            long t = dt.Ticks;
+            BigInteger t = dt.Ticks;
             string str = "";
-            //int index = 0;
-            var units = new List<int>() { 0 };
+            var units = new List<int>();
 
-            int pow = 1;
+            int pow = 0;
 
-            while (t > Math.Pow(ch.Length, pow))
+            do
                 pow++;
+            while (t > BigInteger.Pow(ch.Length, pow + 1));
 
-            pow--;
-
-            for (int p = 0; p < pow - 1; p++)
+            for (int p = pow; p >= 0; p--)
             {
-                // THIS WONT WORK YET
-                int i = p;
-                for (; ; )
+                units.Add(0);
+
+                while (t > BigInteger.Pow(ch.Length, p))
                 {
-                    if (units.Count == i)
-                    {
-                        units.Add(1);
-                        break;
-                    }
-                    else
-                    {
-                        units[i]++;
-                        if (units[i] < 62)
-                            break;
-                        else
-                            units[i] = 0;
-                    }
-                    i++;
+                    units[units.Count - 1]++;
+                    t -= BigInteger.Pow(ch.Length, p);
                 }
-            }
-
-            while (t > 0)
-            {
-                //if (str.Length < index + 1)
-                //{
-                //    str += ch[1];
-                //    index = 0;
-                //}
-                //else
-                //{
-                //    int chi = ch.IndexOf(str[index]) + 1;
-                //    if (chi >= ch.Length)
-                //    {
-                //        str = str.Swap(index, ch[0]);
-                //        index++;
-                //        t++;
-                //    }
-                //    else
-                //    {
-                //        str = str.Swap(index, ch[chi]);
-                //        index = 0;
-                //    }
-                //}
-
-                int i = 0;
-                for ( ; ; )
-                {
-                    if (units.Count == i)
-                    {
-                        units.Add(1);
-                        break;
-                    }
-                    else
-                    {
-                        units[i]++;
-                        if (units[i] < 62)
-                            break;
-                        else
-                            units[i] = 0;
-                    }
-                    i++;
-                }
-
-                t--;
             }
 
             foreach (int unit in units)
                 str += ch[unit];
 
-            return str.Reverse().ToString();
+            return str.ReverseString();
         }
 
-        private static List<int> Advance(List<int> l, int max, int index = 0)
+        public static string ReverseString(this string str)
         {
-            var list = new List<int>(l);
+            string o = "";
 
-            if (list.Count > index)
-            {
-                list[index]++;
-                if (list[index] >= max)
-                {
-                    list[index] = 0;
-                    return Advance(list, max, index + 1);
-                }
-            }
-            else
-                list.Add(1);
+            foreach (char ch in str)
+                o += ch;
 
-            return list;
-        }
-
-        //public static string Swap(this string str, int index, char ch) =>
-        //    str.Remove(index, 1).Insert(index, ch.ToString());
-
-        public static string Swap(this string str, int index, char ch)
-        {
-            string s = str;
-            s = s.Remove(index, 1);
-            s = s.Insert(index, ch.ToString());
-            return s;
+            return o;
         }
     }
 }

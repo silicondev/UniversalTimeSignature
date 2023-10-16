@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" x:Name="DateTimeTxt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas">TMP</Label>
+        <Label Grid.Row="1" x:Name="UTSTxt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas">TMP</Label>
     </Grid>
 </Window>

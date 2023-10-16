@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using UniversalTimeSignature.Lib;
 
 namespace UniversalTimeSignature
@@ -21,13 +22,34 @@ namespace UniversalTimeSignature
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer tickTimer;
+        DispatcherTimer secondTimer;
         public MainWindow()
         {
+            tickTimer = new DispatcherTimer();
+            tickTimer.Tick += UpdateUTS;
+            tickTimer.Interval = new TimeSpan(1);
+
+            secondTimer = new DispatcherTimer();
+            secondTimer.Tick += UpdateClock;
+            secondTimer.Interval = new TimeSpan(0, 0, 1);
+
+
+            tickTimer.Start();
+            secondTimer.Start();
+
             InitializeComponent();
-            MessageBox.Show(DateTime.Now.ToUTS());
-            //string str = "a";
-            //str = str.Swap(0, 'b');
-            //MessageBox.Show(str);
+        }
+
+        private async void UpdateUTS(object sender, EventArgs e)
+        {
+            string uts = await DateTime.Now.ToUTSAsyc();
+            UTSTxt.Content = uts;
+        }
+
+        private void UpdateClock(object sender, EventArgs e)
+        {
+            DateTimeTxt.Content = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }
