@@ -59,7 +59,6 @@ namespace UniversalTimeSignature
             UTS12Txt.Content = uts[11];
             UTS13Txt.Content = uts[12];
             UTS14Txt.Content = uts[13];
-            UTS15Txt.Content = uts[14];
         }
 
         private void UpdateClock(object sender, EventArgs e)

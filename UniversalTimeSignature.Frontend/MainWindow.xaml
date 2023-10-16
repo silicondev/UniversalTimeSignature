@@ -19,21 +19,20 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <Label x:Name="UTS1Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="39,299 Epoch">#</Label> <!-- This currently makes no sense, I think my maths is off. 39,299 Epoch is 39,299,000,000. Universe has only been around for 13,400,000,000 -->
-                <Label x:Name="UTS2Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="633,865 millennia">#</Label>
-                <Label x:Name="UTS3Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="102,236 centuries">#</Label>
-                <Label x:Name="UTS4Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="164,897 years">#</Label>
-                <Label x:Name="UTS5Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="2,659 years">#</Label>
-                <Label x:Name="UTS6Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="42 years 10 months">#</Label>
-                <Label x:Name="UTS7Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="8 months 8 days">#</Label>
-                <Label x:Name="UTS8Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="4.07 days">#</Label>
-                <Label x:Name="UTS9Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="1 hour 34 minutes">#</Label>
-                <Label x:Name="UTS10Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="1 minute 31.61 seconds">#</Label>
-                <Label x:Name="UTS11Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="1.477 seconds">#</Label>
-                <Label x:Name="UTS12Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="23.83 milliseconds">#</Label>
-                <Label x:Name="UTS13Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="384,400 nanoseconds">#</Label>
-                <Label x:Name="UTS14Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="6,200 nanoseconds">#</Label>
-                <Label x:Name="UTS15Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="100 nanoseconds">#</Label>
+                <Label x:Name="UTS1Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="633,865 millennia">#</Label>
+                <Label x:Name="UTS2Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="102,236 centuries">#</Label>
+                <Label x:Name="UTS3Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="164,897 years">#</Label>
+                <Label x:Name="UTS4Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="2,659 years">#</Label>
+                <Label x:Name="UTS5Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="42 years 10 months">#</Label>
+                <Label x:Name="UTS6Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="8 months 8 days">#</Label>
+                <Label x:Name="UTS7Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="4.07 days">#</Label>
+                <Label x:Name="UTS8Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="1 hour 34 minutes">#</Label>
+                <Label x:Name="UTS9Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="1 minute 31.61 seconds">#</Label>
+                <Label x:Name="UTS10Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="1.477 seconds">#</Label>
+                <Label x:Name="UTS11Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="23.83 milliseconds">#</Label>
+                <Label x:Name="UTS12Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="384,400 nanoseconds">#</Label>
+                <Label x:Name="UTS13Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="6,200 nanoseconds">#</Label>
+                <Label x:Name="UTS14Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="100 nanoseconds">#</Label>
             </StackPanel>
         </Grid>
         <!--<Label Grid.Row="1" x:Name="UTSTxt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas">TMP</Label>-->

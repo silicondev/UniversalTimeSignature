@@ -29,9 +29,8 @@ namespace UniversalTimeSignature.Lib
             string str = "";
             int pow = 0;
 
-            do
+            while (t > BigInteger.Pow(ch.Length, pow + 1))
                 pow++;
-            while (t > BigInteger.Pow(ch.Length, pow + 1));
 
             do
             {
