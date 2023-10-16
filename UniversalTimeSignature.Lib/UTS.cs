@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Net.Http.Headers;
 using System.Numerics;
 using System.Text;
 
@@ -8,6 +9,10 @@ namespace UniversalTimeSignature.Lib
     public static class UTS
     {
         private static string ch = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        /// <summary>
+        /// 13.4 Billion years in Ticks
+        /// </summary>
+        public static BigInteger BigBang = 13400000000 * (BigInteger)(365.2425 * 86400) * 1000000000;
 
         public static async Task<string> ToUTSAsyc(this DateTime dt) =>
             await Task.Run(() => ToUTS(dt));
@@ -15,36 +20,34 @@ namespace UniversalTimeSignature.Lib
         public static string ToUTS(this DateTime dt)
         {
             BigInteger t = dt.Ticks;
-            t += 13400000000 * (BigInteger)(365.2425 * 86400) * 1000000000;
+            t += BigBang;
             return t.ToUTS();
         }
 
         public static string ToUTS(this BigInteger t)
         {
             string str = "";
-            var units = new List<int>();
-
             int pow = 0;
 
             do
                 pow++;
             while (t > BigInteger.Pow(ch.Length, pow + 1));
 
-            for (int p = pow; p >= 0; p--)
+            do
             {
                 int i = 0;
-                while (t > BigInteger.Pow(ch.Length, p))
+                BigInteger unit = BigInteger.Pow(ch.Length, pow);
+                while (t >= unit)
                 {
                     i++;
-                    t -= BigInteger.Pow(ch.Length, p);
+                    t -= unit;
                 }
-                units.Add(i);
+                str += ch[i];
+                pow--;
             }
+            while (pow >= 0);
 
-            foreach (int unit in units)
-                str += ch[unit];
-
-            return str.ReverseString();
+            return str;
         }
 
         public static string ReverseString(this string str)
