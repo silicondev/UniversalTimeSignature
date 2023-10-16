@@ -10,6 +10,8 @@
     <AssemblyName>Universal Time Signature</AssemblyName>
 	  <DebugType>embedded</DebugType>
 	  <FileVersion>0.1.0</FileVersion>
+	  <Authors>Josh Sims</Authors>
+	  <AssemblyVersion>0.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,15 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UniversalTimeSignature.Lib\UniversalTimeSignature.Lib.csproj" />
+    <ProjectReference Include="..\UniversalTimeSignature.Lib\UniversalTimeSignature.Lib.csproj">
+	  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	</ProjectReference>
   </ItemGroup>
-  
-  <ItemGroup>
-    <Content Update="UniversalTimeSignature.Lib.dll">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-  </ItemGroup>
-
 
 </Project>
