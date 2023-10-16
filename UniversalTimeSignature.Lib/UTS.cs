@@ -17,6 +17,9 @@ namespace UniversalTimeSignature.Lib
         public static async Task<string> ToUTSAsyc(this DateTime dt) =>
             await Task.Run(() => ToUTS(dt));
 
+        public static async Task<string> ToUTSAsyc(this BigInteger bi) =>
+            await Task.Run(() => ToUTS(bi));
+
         public static string ToUTS(this DateTime dt)
         {
             BigInteger t = dt.Ticks;
@@ -47,16 +50,6 @@ namespace UniversalTimeSignature.Lib
             while (pow >= 0);
 
             return str;
-        }
-
-        public static string ReverseString(this string str)
-        {
-            string o = "";
-
-            foreach (char ch in str)
-                o += ch;
-
-            return o;
         }
     }
 }

@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniversalTimeSignature"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Universal Time Signature" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" x:Name="DateTimeTxt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas">TMP</Label>
-        <Grid Grid.Row="1">
+        <Label Grid.Row="1" x:Name="DateTimeTxt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas">##/##/#### ##:##:##</Label>
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
@@ -20,6 +22,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <Label x:Name="UTS1Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="633,865 millennia">#</Label>
+                <!-- This is not right -->
                 <Label x:Name="UTS2Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="102,236 centuries">#</Label>
                 <Label x:Name="UTS3Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="164,897 years">#</Label>
                 <Label x:Name="UTS4Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="2,659 years">#</Label>
@@ -35,6 +38,5 @@
                 <Label x:Name="UTS14Txt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" Margin="-5,0,-5,0" ToolTip="100 nanoseconds">#</Label>
             </StackPanel>
         </Grid>
-        <!--<Label Grid.Row="1" x:Name="UTSTxt" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas">TMP</Label>-->
     </Grid>
 </Window>

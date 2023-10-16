@@ -5,10 +5,33 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <Title>Universal Time Signature</Title>
+    <AssemblyName>Universal Time Signature</AssemblyName>
+	  <DebugType>embedded</DebugType>
+	  <FileVersion>0.1.0</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\UniversalTimeSignature.Lib\UniversalTimeSignature.Lib.csproj" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Content Update="UniversalTimeSignature.Lib.dll">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 
 </Project>
